@@ -52,7 +52,7 @@
     "publishEditFolder": false,
     "cssOptimize": true,
     "favicon": false,
-    "mbrsiteDomain": "o2qjh20qfa",
+    "mbrsiteDomain": "n9obqxdvi2",
     "lazyLoad": false,
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
@@ -64,7 +64,7 @@
     "mcSmartCart": {
       "currency": "USD"
     },
-    "publishChangesOnly": false,
+    "publishChangesOnly": true,
     "chatbutton": {},
     "uniqCompNum": 11,
     "versionPublish": "5.7.3",
@@ -72,8 +72,8 @@
     "PWA": {
       "enabled": true,
       "name": "",
-      "icon": "@ADDONS_PATH@/pwa-builder/assets/icons/512x512.png",
-      "themeColor": "#2a4fab"
+      "icon": "@PROJECT_PATH@/assets/images/phy-logo-4-512x512.png",
+      "themeColor": "#947212"
     }
   },
   "pages": {
