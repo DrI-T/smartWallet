@@ -1,1 +1,1 @@
-{"name":"smartWallet","short_name":"smartWallet","start_url":"/","display":"standalone","theme_color":"#947212","background_color":"#947212","icons":[{"src":"assets/icons/512x512.png","sizes":"512x512","type":"image/png"}]}
+{"name":"smartWallet","short_name":"smartWallet","start_url":"/smartWallet","display":"standalone","theme_color":"#947212","background_color":"#947212","icons":[{"src":"assets/icons/512x512.png","sizes":"512x512","type":"image/png"}]}
