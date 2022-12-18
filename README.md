@@ -1,2 +1,2 @@
-# smartWallet
+# PhenoMY
 GitHub Pages

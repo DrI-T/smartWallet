@@ -28,8 +28,8 @@
         "isAnimatedOnScroll": false,
         "isScrollToTopButton": false
       },
-      "titlePreset": "Ergonomics shop",
-      "nameSelectPreset": "ergonomics-shop",
+      "titlePreset": "PhenoMY Healthing",
+      "nameSelectPreset": "phenomy-health",
       "presetSourceTheme": "ergom5",
       "additionalSetColors": [
         "#ffef98",
@@ -39,7 +39,7 @@
       ]
     },
     "path": "@PROJECT_PATH@",
-    "name": "smartWallet",
+    "name": "PhenoMY",
     "versionFirst": "5.7.3",
     "siteFonts": [
       {
@@ -77,7 +77,7 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "Home",
+        "title": "PhenoMY",
         "meta_descr": "",
         "header_custom": "",
         "footer_custom": "",

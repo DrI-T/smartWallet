@@ -1519,7 +1519,11 @@ a {
 .cid-tqoyvkgeXd {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #030303;
+  background-color: #030305;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9;
 }
 .cid-tqoyvkgeXd .social-list {
   display: flex;
