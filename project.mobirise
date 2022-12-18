@@ -47,10 +47,9 @@
     ],
     "imageResize": true,
     "publishEditFolder": false,
-    "chatbutton": {},
     "cssOptimize": true,
     "favicon": false,
-    "mbrsiteDomain": "smartwallet",
+    "mbrsiteDomain": "sod0ldpduw",
     "lazyLoad": false,
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
@@ -63,8 +62,10 @@
       "currency": "USD"
     },
     "publishChangesOnly": false,
-    "uniqCompNum": 8,
-    "versionPublish": "5.7.3"
+    "chatbutton": false,
+    "uniqCompNum": 10,
+    "versionPublish": "5.7.3",
+    "screenshot": "screenshot.png"
   },
   "pages": {
     "index.html": {
@@ -152,6 +153,54 @@
           "_params": {}
         },
         {
+          "_name": "form03",
+          "_sourceTheme": "preschoolm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"form03\" group=\"Form\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\" plugins=\"formstyler, datepicker\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <header>Row</header>\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value=\"justify-content-start\">Left</option>\n            <option value=\"justify-content-center\" selected>Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Card</header>\n        <input type=\"checkbox\" title=\"Transparent\" name=\"isTransparent\">\n        <input type=\"color\" title=\"Color\" name=\"cardColor\" value=\"#ebeae2\" condition=\"!isTransparent\">\n        <input type=\"checkbox\" title=\"Shadow\" name=\"hasShadow\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/preschoolm5/components/_images/bg/1-bg.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/preschoolm5/components/_images/bg/1-bg.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"hidden\" name=\"usedRecaptcha\" value=\"false\"></mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"wrapper p-3 py-5 p-lg-5\">\n            <div class=\"row {{contentAlign}}\">\n                <div class=\"col-12 col-lg-5 card\">\n                    <div mbr-form class=\"mbr-form\">\n<!--Formbuilder Form-->\n<form action name=\"Form Name\" method=\"POST\" class=\"mbr-form form-with-styler\">\n<div class=\"row\">\n<div hidden=\"hidden\" data-form-alert class=\"alert alert-success col-12\"> Thanks for filling out the form! </div>\n<div hidden=\"hidden\" data-form-alert-danger class=\"alert alert-danger col-12\"> Oops...! some problem! </div>\n</div>\n<div class=\"dragArea row\">\n<div class=\"col-12\">\n<h2 mbr-theme-style=\"display-2\" class=\"mbr-section-title mbr-fonts-style\">Login</h2>\n</div>\n<div class=\"col-12 form-group mb-4\" data-for=\"Name\">\n<input type=\"text\" name=\"Name\" placeholder=\"Full Name\" data-form-field=\"Name\" mbr-theme-style=\"display-7\" required=\"required\" class=\"form-control\" value>\n</div>\n<div data-for=\"passcode\" class=\"col-lg-12 col-md-12 col-sm-12 form-group\">\n<input type=\"password\" name=\"passcode\" placeholder=\"Passcode\" data-form-field=\"passcode\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n</div>\n<div class=\"col-12\">\n<p mbr-theme-style=\"display-4\" class=\"mbr-text mbr-fonts-style\"><a href=\"/Forgot\" class=\"text-primary\">forgot passcode</a></p>\n</div>\n<div class=\"col-12 mbr-section-btn\" mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\">\n<a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"w-100 btn btn-primary justify-content-center\">Sign-in</a>\n</div>\n</div>\n</form><!--Formbuilder Form-->\n</div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".card": {
+              "padding": "30px",
+              "@media (min-width: 992px)": {
+                "padding": "60px"
+              },
+              "background-color": "if(@isTransparent, transparent, @cardColor)",
+              "& when (@hasShadow)": {
+                "box-shadow": "0px 10px 20px 0px rgba(29, 29, 27, 0.2)"
+              }
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            }
+          },
+          "_cid": "tqp9tt0by7",
+          "_anchor": "form03-8",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "alias": false,
           "_styles": {
             "& when not (@fullScreen)": {
@@ -179,6 +228,108 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"content5\" group=\"Content\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#bff373\" selected>\n        </fieldset>\n        <input type=\"text\" title=\"Fallback Image\" name=\"videoToImageOnMobile\" condition=\"overlay && bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\" video-to-image-on-mobile=\"{{videoToImageOnMobile}}\">\n        <div class=\"row align-items-end\">\n            <div class=\"title col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-text mbr-fonts-style mb-0\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\">\n                    Nutrition Recommendation at the tip of your fingers</h3>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "t84vDWe9rw",
           "_anchor": "content5-4",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "formbuilder",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            ".mbr-overlay": {
+              "background-color": "@overlayColor",
+              "opacity": "@overlayOpacity"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@customStyle)": {
+              ".form-control, .field-input": {
+                "padding": "0.5rem",
+                "background-color": "@fieldColor",
+                "border-color": "@borderColor",
+                "color": "@formText",
+                "transition": "0.4s",
+                "box-shadow": "none",
+                "outline": "none",
+                "&::-webkit-input-placeholder, &::-webkit-input-placeholder": {
+                  "color": "@formPlaceholder"
+                },
+                "&:-moz-placeholder, &:-moz-placeholder": {
+                  "color": "@formPlaceholder"
+                },
+                "&:hover, &:focus": {
+                  "background-color": "@fieldHover",
+                  "border-color": "@borderHover",
+                  "color": "@formFocusText",
+                  "box-shadow": "none",
+                  "outline": "none",
+                  "&::-webkit-input-placeholder, &::-webkit-input-placeholder": {
+                    "color": "@formFocusPlaceholder"
+                  },
+                  "&:-moz-placeholder, &:-moz-placeholder": {
+                    "color": "@formFocusPlaceholder"
+                  }
+                }
+              },
+              ".jq-number__spin:hover, .jq-number__spin:focus": {
+                "background-color": "@fieldHover",
+                "border-color": "@borderHover",
+                "color": "contrast(@formText, #000000, #ffffff, 30%)",
+                "box-shadow": "none",
+                "outline": "none"
+              },
+              ".jq-number__spin": {
+                "background-color": "@fieldColor",
+                "border-color": "@borderColor",
+                "color": "@formText",
+                "transition": "0.4s",
+                "box-shadow": "none",
+                "outline": "none"
+              },
+              ".jq-selectbox li, .jq-selectbox li": {
+                "background-color": "@fieldColor",
+                "color": "contrast(@fieldColor, #000000, #ffffff, 30%)"
+              },
+              ".jq-selectbox li:hover, .jq-selectbox li.selected": {
+                "background-color": "@fieldHover",
+                "color": "contrast(@fieldHover, #000000, #ffffff, 30%)"
+              },
+              ".jq-selectbox:hover .jq-selectbox__trigger-arrow, .jq-number__spin.minus:hover:after, .jq-number__spin.plus:hover:after": {
+                "border-top-color": "@fieldColor",
+                "border-bottom-color": "@fieldColor"
+              },
+              ".jq-selectbox .jq-selectbox__trigger-arrow, .jq-number__spin.minus:after, .jq-number__spin.plus:after": {
+                "border-top-color": "@fieldHover",
+                "border-bottom-color": "@fieldHover"
+              }
+            },
+            "& when (@customStyle), (@disableElements)": {
+              "input::-webkit-clear-button": {
+                "display": "none"
+              },
+              "input::-webkit-inner-spin-button": {
+                "display": "none"
+              },
+              "input::-webkit-outer-spin-button": {
+                "display": "none"
+              },
+              "input::-webkit-calendar-picker-indicator": {
+                "display": "none"
+              }
+            }
+          },
+          "_name": "formbuilder",
+          "_sourceTheme": "ergom5",
+          "_customHTML": "<section class=\"form\" group=\"Form\" plugins=\"formstyler, datepicker\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <header>Style</header>\n        <input type=\"checkbox\" name=\"customStyle\" title=\"Custom Style\">\n        <input type=\"checkbox\" name=\"disableElements\" title=\"Disable Control\">\n        <input type=\"color\" name=\"fieldColor\" title=\"Field\" value=\"#ffffff\" condition=\"customStyle\">\n        <input type=\"color\" name=\"fieldHover\" title=\"Field Hover\" value=\"#efefef\" condition=\"customStyle\">\n        <input type=\"color\" name=\"borderColor\" title=\"Border\" value=\"#cccccc\" condition=\"customStyle\">\n        <input type=\"color\" name=\"borderHover\" title=\"Border Hover\" value=\"#cccccc\" condition=\"customStyle\">\n        <input type=\"color\" name=\"formText\" title=\"Text\" value=\"#000000\" condition=\"customStyle\">\n        <input type=\"color\" name=\"formFocusText\" title=\"Text Focus\" value=\"#232323\" condition=\"customStyle\">\n        <input type=\"color\" name=\"formPlaceholder\" title=\"Placeholders\" value=\"#c1c1c1\" condition=\"customStyle\">\n        <input type=\"color\" name=\"formFocusPlaceholder\" title=\"Placeholders Focus\" value=\"#c1c1c1\" condition=\"customStyle\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../assets/background.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"hidden\" name=\"usedRecaptcha\" value=\"false\"></mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type=='image')\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div mbr-form class=\"col-lg-8 mx-auto mbr-form\">\n<!--Formbuilder Form-->\n<form action name=\"Form Name\" method=\"POST\" data-rcpha_sitekey=\"\" data-rcpha_secretkey=\"\" class=\"mbr-form form-with-styler\">\n<div class=\"form-row\">\n<div hidden=\"hidden\" data-form-alert class=\"alert alert-success col-12\">Thanks for filling out the form!</div>\n<div hidden=\"hidden\" data-form-alert-danger class=\"alert alert-danger col-12\">Oops...! some problem!</div>\n</div>\n<div class=\"dragArea row\">\n<div class=\"col-lg-12 col-md-12 col-sm-12\">\n<h4 mbr-theme-style=\"display-5\" class=\"mbr-fonts-style\">Login</h4>\n</div>\n<div class=\"col-lg-12 col-md-12 col-sm-12\">\n<hr>\n</div>\n<div data-for=\"name\" class=\"col-lg-12 col-md-12 col-sm-12 form-group\">\n<input type=\"text\" name=\"name\" placeholder=\"Name\" data-form-field=\"name\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n</div>\n<div class=\"col-lg-12 col-md-12 col-sm-12 form-group\" data-for=\"passcode\">\n<input type=\"password\" name=\"passcode\" placeholder=\"Passcode\" data-form-field=\"passcode\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n</div>\n<div class=\"col-lg-12 col-md-12 col-sm-12\">\n<p mbr-theme-style=\"display-7\" class=\"mbr-fonts-style\"><a href=\"/Forgot\" class=\"text-primary\">forgot passcode</a></p>\n</div>\n<div class=\"col-auto\" mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" style>\n<a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"w-100 btn btn-primary\">Submit</a>\n</div>\n</div>\n</form><!--Formbuilder Form-->\n</div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tqp9yLkFPi",
+          "_anchor": "formbuilder-9",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -907,27 +1058,9 @@
           "_params": {}
         },
         {
-          "alias": "eb-chats-widget",
-          "_isSecondary": true,
-          "_styles": {},
-          "_name": "eb-chats-widget",
-          "_sourceTheme": "ergom5",
-          "_customHTML": "<section class=\"elb-widgets eb-chats-widget\" group=\"Chat\" once=\"chat\"><div style=\"max-width:600px;margin:0 auto;padding: 70px 0;\">    <div class=\"popupChatsPlaceholder\">        <style>            .popupChatsPlaceholder h2::after {content: \"\"; position: absolute; left: 0; bottom: 0; height: 100%; width: 100%;}        </style>        <h2>POPUP CHAT WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2>        <img src=\"../eb-chats-widget/assets/posts.jpg\">    </div></div></section>",
-          "_cid": "tqoePQW7uj",
-          "_anchor": "eb-chats-widget-0",
-          "safe": {
-            "id": 8041,
-            "code": "<script src=\"https://s.electricblaze.com/widget.js\" defer></script>\n<div class=\"electricblaze-id-2Uhx7Vp\"></div>"
-          },
-          "_protectedParams": [],
-          "_global": false,
-          "_once": "chat",
-          "_params": {}
-        },
-        {
           "_name": "afooter1",
           "_sourceTheme": "growthm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer1 growthm5\" group=\"Footers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" global once=\"footers\" mbr-class=\"{\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\">\n        <input type=\"checkbox\" title=\"Top Buttons\" name=\"showTopButtons\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Bottom Buttons\" name=\"showBottomButtons\" checked>\n        <input type=\"checkbox\" title=\"Copyright\" name=\"showCopyright\">\n        <input type=\"checkbox\" title=\"Bg Circle\" name=\"showCircle\" checked>\n        <input type=\"color\" title=\"Circle Color\" name=\"circlesColor\" value=\"#ED7A5F\" condition=\"showCircle\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/growthm5/components/_images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#272727\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/growthm5/components/_images/background2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#272727\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"circle-bg\" mbr-if=\"showCircle\"></div>\n            <div class=\"footer-top-container\" mbr-if=\"showLink || showTopButtons\">\n                <div class=\"col-link\">\n                    <ul class=\"list mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showLink\" data-app-selector=\".list\" data-multiline=\"true\" data-app-edit=\"full\" mbr-article>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Home</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">About</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Work</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Blog</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Contact</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Careers</a>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"col-btn-top\">\n                    <div mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showTopButtons\" class=\"mbr-section-btn align-right\">\n                        <a class=\"btn btn-white\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Book a call\n                        </a>\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Join our team\n                        </a>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"footer-text-wrap\" mbr-if=\"showTitle\">\n                <h5 mbr-text class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-1\">\n                    Let's create the next cool thing, together.\n                </h5>\n            </div>\n\n            <div class=\"footer-bottom-container\" mbr-if=\"showBottomButtons || showCopyright\">\n                <div class=\"col-btn-bottom\">\n                    <div mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showBottomButtons\" class=\"mbr-section-btn align-center\">\n                        <a class=\"btn btn-white\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Book a call\n                        </a>\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Join our team\n                        </a>\n                    </div>\n                </div>\n                <div class=\"col-copyright\" mbr-if=\"showCopyright\">\n                    <p class=\"mbr-text mb-0 mbr-fonts-style copyright align-right\" mbr-theme-style=\"display-7\" data-app-selector=\".copyright\" data-app-placeholder=\"Type Text\">\n                        © Copyright 2030 Mobirise - All Rights Reserved\n                    </p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer1 growthm5\" group=\"Footers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" global once=\"footers\" mbr-class=\"{\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\">\n        <input type=\"checkbox\" title=\"Top Buttons\" name=\"showTopButtons\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Bottom Buttons\" name=\"showBottomButtons\" checked>\n        <input type=\"checkbox\" title=\"Copyright\" name=\"showCopyright\">\n        <input type=\"checkbox\" title=\"Bg Circle\" name=\"showCircle\" checked>\n        <input type=\"color\" title=\"Circle Color\" name=\"circlesColor\" value=\"#ED7A5F\" condition=\"showCircle\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/growthm5/components/_images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#272727\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/growthm5/components/_images/background2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#272727\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"circle-bg\" mbr-if=\"showCircle\"></div>\n            <div class=\"footer-top-container\" mbr-if=\"showLink || showTopButtons\">\n                <div class=\"col-link\">\n                    <ul class=\"list mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showLink\" data-app-selector=\".list\" data-multiline=\"true\" data-app-edit=\"full\" mbr-article>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Home</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">About</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Work</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Blog</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Contact</a>\n                        </li>\n                        <li class=\"mbr-text item-wrap\" data-app-selector=\".list\">\n                            <a href=\"#\" class=\"text-white\" data-app-selector=\".list\">Careers</a>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"col-btn-top\">\n                    <div mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showTopButtons\" class=\"mbr-section-btn align-right\">\n                        <a class=\"btn btn-white\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Book a call\n                        </a>\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Join our team\n                        </a>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"footer-bottom-container\" mbr-if=\"showBottomButtons || showCopyright\">\n                <div class=\"col-btn-bottom\">\n                    <div mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showBottomButtons\" class=\"mbr-section-btn align-center\">\n                        <a class=\"btn btn-white\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Book a call\n                        </a>\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            Join our team\n                        </a>\n                    </div>\n                </div>\n                <div class=\"col-copyright\" mbr-if=\"showCopyright\">\n                    <p class=\"mbr-text mb-0 mbr-fonts-style copyright align-right\" mbr-theme-style=\"display-7\" data-app-selector=\".copyright\" data-app-placeholder=\"Type Text\">\n                        © Copyright 2030 Mobirise - All Rights Reserved\n                    </p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
@@ -1166,11 +1299,11 @@
             }
           },
           "_cid": "tqoyvkgeXd",
+          "_anchor": "footer01-5",
           "_protectedParams": [],
           "_global": true,
           "_once": "footer",
-          "_params": {},
-          "_anchor": "footer01-5"
+          "_params": {}
         }
       ]
     }
